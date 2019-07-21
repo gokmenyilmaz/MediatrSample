@@ -27,9 +27,20 @@ namespace WebApplication2
         public Task Handle(NotificationMessage notification, CancellationToken cancellationToken)
         {
             Debug.WriteLine($"Debugging from Notifier 2. Message  : {notification.NotifyText} ");
+
+          
             return Task.CompletedTask;
         }
     }
 
-  
+    public class LogKaydet : INotificationHandler<NotificationMessage>
+    {
+        public Task Handle(NotificationMessage notification, CancellationToken cancellationToken)
+        {
+            Debug.WriteLine($"üçüncü  : {notification.NotifyText} ");
+            return Task.CompletedTask;
+        }
+    }
+
+
 }
